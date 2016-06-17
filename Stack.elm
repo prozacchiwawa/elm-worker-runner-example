@@ -1,3 +1,4 @@
+-- From http://stackoverflow.com/questions/36951939/reversing-a-string-using-a-stack-adt-in-elm/36952822#36952822
 module Stack exposing (..)
 
 import Html exposing (..)
