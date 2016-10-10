@@ -10,15 +10,17 @@ To try it out:
     
 And type some numbers and operators:
 
-    <b>3</b>
-    3
-    <b>7</b>
-    7 3
-    <b>10</b>
-    10 7 3
-    <b>+</b>
-    17 3
-    <b>-</b>
-    14
-    <b>^D</b>
-    14
+<pre>
+<b>3</b>
+3
+<b>7</b>
+7 3
+<b>10</b>
+10 7 3
+<b>+</b>
+17 3
+<b>-</b>
+14
+<b>^D</b>
+14
+</pre>
