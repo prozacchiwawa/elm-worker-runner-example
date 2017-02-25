@@ -1,9 +1,9 @@
 port module Calc exposing (..)
 
-import Html exposing (..)
-import Html.App exposing (program)
-import String
+import Json.Decode
 import Lazy.List as LL exposing (LazyList)
+import Platform exposing (program)
+import String
 
 import Stack exposing (..)
 
@@ -67,7 +67,6 @@ main =
   program
     { init = ([], Cmd.none)
     , update = update
-    , view = always (Html.text "")
     , subscriptions = \_ -> Sub.batch [input translateInputString, close (\_ -> Close)]
     }
 

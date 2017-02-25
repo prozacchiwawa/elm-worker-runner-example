@@ -1,8 +1,6 @@
 -- From http://stackoverflow.com/questions/36951939/reversing-a-string-using-a-stack-adt-in-elm/36952822#36952822
 module Stack exposing (..)
 
-import Html exposing (..)
-import Html.App exposing (program)
 import String
 import Lazy.List as LL exposing (LazyList)
 
@@ -21,10 +19,7 @@ pop stack =
 stackIterator : Stack a -> LazyList a
 stackIterator stack =
  LL.iterate (\(mhd, tl) -> pop tl) (pop stack)
-  |> LL.map fst
-  |> LL.takeWhile (\a -> a /= Nothing)
-  |> LL.flatMap 
-    (\a -> 
-      case a of
-        Just x -> LL.singleton x
-        Nothing -> LL.empty)
+  |> LL.map Tuple.first
+  |> LL.takeWhile ((/=) Nothing)
+  |> LL.map (Maybe.map LL.singleton >> Maybe.withDefault LL.empty)
+  |> LL.flatten
